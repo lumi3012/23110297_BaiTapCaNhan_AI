@@ -918,7 +918,7 @@ class Puzzle(QtWidgets.QMainWindow):
 
         return []
 
-###Complex Annealing
+###Complex Environments
     #And-Or    
     def and_or(self, start, goal, max_depth=50):
         cache = {}
@@ -1121,6 +1121,7 @@ class Puzzle(QtWidgets.QMainWindow):
                     return path
 
         return best_path if best_path and best_cost == 0 else None
+        
 ###Reinforcement Learning
     #q_learning
     def q_learning(self, episodes=1000, alpha=0.1, gamma=0.9, epsilon=0.2):
