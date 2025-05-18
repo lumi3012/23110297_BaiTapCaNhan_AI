@@ -1,94 +1,66 @@
-8-PUZZLE AI GAME
+# 🧠 8-PUZZLE AI GAME 🎮
 
-TỔNG QUAN VỀ BÀI TẬP
+## 🎯TỔNG QUAN VỀ BÀI TẬP
 
-Dự án này mô phỏng trò chơi 8-Puzzle, một bài toán nổi tiếng trong trí tuệ nhân tạo (AI), với giao diện trực quan để giải quyết bài toán tìm kiếm bằng các thuật toán tìm kiếm khác nhau. 
+Dự án này mô phỏng trò chơi **8-Puzzle**, một bài toán nổi tiếng trong trí tuệ nhân tạo (AI), với giao diện trực quan để giải quyết bài toán tìm kiếm bằng các thuật toán tìm kiếm khác nhau. 
 
-8-Puzzle là một trò chơi trí tuệ cổ điển gồm một bảng 3x3 với 8 ô số (1–8) và một ô trống. Mục tiêu của trò chơi là di chuyển các ô số (bằng cách trượt vào vị trí trống) sao cho sắp xếp được bảng từ trạng thái ban đầu bất kỳ về trạng thái đích (mục tiêu).
+**8-Puzzle** là một trò chơi trí tuệ cổ điển gồm một bảng 3x3 với 8 ô số (1–8) và một ô trống. Mục tiêu của trò chơi là **di chuyển các ô số** (bằng cách trượt vào vị trí trống) sao cho sắp xếp được bảng từ trạng thái ban đầu bất kỳ về **trạng thái đích (mục tiêu)**.
 
-Trò chơi này được xem là một bài toán tìm kiếm không gian trạng thái, rất phổ biến trong lĩnh vực Trí tuệ nhân tạo (AI). Việc giải quyết 8-Puzzle đòi hỏi phải tìm được một chuỗi hành động (di chuyển các ô) ngắn nhất hoặc tối ưu nhất từ trạng thái ban đầu về trạng thái mục tiêu.
+Trò chơi này được xem là một **bài toán tìm kiếm không gian trạng thái**, rất phổ biến trong lĩnh vực Trí tuệ nhân tạo (AI). Việc giải quyết 8-Puzzle đòi hỏi phải tìm được một chuỗi hành động (di chuyển các ô) ngắn nhất hoặc tối ưu nhất từ trạng thái ban đầu về trạng thái mục tiêu.
 
-MỤC TIÊU
+## 🎯MỤC TIÊU
 
 Các thuật toán AI được triển khai giúp giải quyết bài toán 8-Puzzle bằng nhiều cách tiếp cận khác nhau, mỗi thuật toán sẽ cho ra kết quả và thời gian thực thi khác nhau, mang lại cái nhìn trực quan về hiệu quả của từng phương pháp tìm kiếm giúp người học tập, nghiên cứu về các thuật toán tìm kiếm dễ dàng quan sát, so sánh và không bị nhàm chán khi học. Các thuật toán này bao gồm:
 
-Thuật toán tìm kiếm không có thông tin (Uninformed Search): BFS, DFS, USC, IDDFS
+-   **Thuật toán tìm kiếm không có thông tin (Uninformed Search)**: BFS, DFS, USC, IDDFS
 
-Thuật toán tìm kiếm có thông tin (Informed Search): Greedy, A, IDA**
+-   **Thuật toán tìm kiếm có thông tin (Informed Search)**: Greedy, A, IDA**
 
-Thuật toán tìm kiếm cục bộ (Local Search): SHC, SAHC, Stochastic HC, Beam Search, Simulated Annealing, Genetic Algorithm
+-   **Thuật toán tìm kiếm cục bộ (Local Search)**: SHC, SAHC, Stochastic HC, Beam Search, Simulated Annealing, Genetic Algorithm
 
-Thuật toán ràng buộc (CSPs): Backtracking, Forward Checking, Min-Conflicts
+-   **Thuật toán ràng buộc (CSPs)**: Backtracking, Forward Checking, Min-Conflicts
 
-Thuật toán tìm kiếm trong môi trường phức tạp (Complex Environment): Sensorless, And-Or Search
+-   **Thuật toán tìm kiếm trong môi trường phức tạp (Complex Environment)**: Sensorless, And-Or Search
 
-Thuật toán học tăng cường (Reinforcement Learning): Q-Learning
+-   **Thuật toán học tăng cường (Reinforcement Learning)**: Q-Learning
 
 Thông qua dự án này, người dùng có thể dễ dàng quan sát quá trình giải quyết bài toán 8-Puzzle qua giao diện đồ họa, với các thuật toán khác nhau hiển thị rõ ràng những bước đi và quá trình tìm kiếm trong không gian trạng thái.
 
-Mục lục
+## 📚Mục lục
+- [Tổng quan về bài tập](#tổng-quan-về-bài-tập)
+- [Thuật toán tìm kiếm không có thông tin](#1.-thuật-toán-tìm-kiếm-không-có-thông-tin)
+  - [BFS](#bfs)
+  - [DFS](#dfs)
+  - [IDDFS](#iddfs)
+  - [UCS](#ucs)
+- [Thuật toán tìm kiếm có thông tin](#thuật-toán-tìm-kiếm-có-thông-tin)
+  - [Greedy](#greedy)
+  - [A*](#a)
+  - [IDA*](#ida)
+- [Thuật toán tìm kiếm cục bộ](#thuật-toán-tìm-kiếm-cục-bộ)
+  - [SHC](#shc)
+  - [SAHC](#sahc)
+  - [Stochastic HC](#stochastic-hc)
+  - [Beam Search](#beam-search)
+  - [Simulated Annealing](#simulated-annealing)
+  - [Genetic Algorithm](#genetic-algorithm)
+- [Thuật toán ràng buộc (CSPs)](#thuật-toán-ràng-buộc-csps)
+  - [Backtracking](#backtracking)
+  - [Forward Checking](#forward-checking)
+  - [Min-Conflicts](#min-conflicts)
+- [Thuật toán tìm kiếm trong môi trường phức tạp](#thuật-toán-tìm-kiếm-trong-môi-trường-phức-tạp)
+  - [Sensorless](#sensorless)
+  - [And-Or Search](#and-or-search)
+- [Thuật toán học tăng cường (Reinforcement Learning)](#thuật-toán-học-tăng-cường-reinforcement-learning)
+  - [Q-Learning](#q-learning)
+- [Giao diện](#giao-diện)
+- [Kết luận](#kết-luận)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- diện
-
-
-
-1. Thuật toán tìm kiếm không có thông tin (Uninformed Search)
+##1. Thuật toán tìm kiếm không có thông tin
 
 Thuật toán tìm kiếm không có thông tin là các thuật toán tìm kiếm mà không sử dụng bất kỳ thông tin bổ sung nào ngoài trạng thái ban đầu và các trạng thái liên quan. Các thuật toán này chỉ dựa vào việc mở rộng các trạng thái theo một thứ tự cụ thể mà không dựa vào đánh giá về chất lượng của các trạng thái đó. Do không có "thông tin thông minh", các thuật toán này có thể tốn kém về bộ nhớ và thời gian.
 
-Ưu điểm:
+-**Ưu điểm:**
 
 Đơn giản và dễ hiểu, không yêu cầu thông tin bổ sung ngoài trạng thái ban đầu.
 
