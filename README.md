@@ -67,13 +67,13 @@ Thông qua dự án này, người dùng có thể dễ dàng quan sát quá tr�
 
 Thuật toán tìm kiếm không có thông tin là các thuật toán tìm kiếm mà không sử dụng bất kỳ thông tin bổ sung nào ngoài trạng thái ban đầu và các trạng thái liên quan. Các thuật toán này chỉ dựa vào việc mở rộng các trạng thái theo một thứ tự cụ thể mà không dựa vào đánh giá về chất lượng của các trạng thái đó. Do không có "thông tin thông minh", các thuật toán này có thể tốn kém về bộ nhớ và thời gian.
 
--   **Ưu điểm:**
+**Ưu điểm:**
 
   - Đơn giản và dễ hiểu, không yêu cầu thông tin bổ sung ngoài trạng thái ban đầu.
 
   - Tìm kiếm theo chiều rộng (BFS) đảm bảo tìm được giải pháp tối ưu nếu tồn tại.
 
--   **Nhược điểm:**
+**Nhược điểm:**
 
   - Tiêu tốn nhiều bộ nhớ và thời gian khi không gian trạng thái lớn.
 
@@ -81,11 +81,11 @@ Thuật toán tìm kiếm không có thông tin là các thuật toán tìm ki�
 
   - Không tối ưu trong những bài toán phức tạp, vì chúng không sử dụng thông tin bổ sung để hướng dẫn tìm kiếm.
 
--   **Mô phòng trong trò chơi 8-puzzle:**
+**Mô phòng trong trò chơi 8-puzzle:**
 
 Hiệu quả với hầu hết trạng thái, kể cả trạng thái khó.
 
--   **Tuy nhiên:**
+**Tuy nhiên:**
 
   - DFS cần giới hạn độ sâu để tránh lặp vô hạn.
 
@@ -93,39 +93,46 @@ Hiệu quả với hầu hết trạng thái, kể cả trạng thái khó.
 
   - Dùng tốt cho trạng thái có độ sâu từ 15–20 bước.
 
+![BFS](bfs.gif.gif)
+![DFS](dfs.gif.gif)
+![IDDFS](iddfs.gif.gif)
+![UCS](ucs.gif.gif)
+
+![uninformed_chart](Screenshot%202025-05-18%20203727.png)
+
 
 ### BFS (Tìm kiếm theo chiều rộng)
 
 Thuật toán tìm kiếm theo chiều rộng (BFS) sẽ mở rộng các đỉnh của cây tìm kiếm từ gốc theo từng mức độ, kiểm tra tất cả các đỉnh cùng một mức trước khi chuyển sang mức tiếp theo.
 
--  **Độ tối ưu:** Tối ưu đối với các bài toán tìm kiếm vô hạn nếu không có thông tin.
+-  *Độ tối ưu:* Tối ưu đối với các bài toán tìm kiếm vô hạn nếu không có thông tin.
 
--  **Độ phức tạp:** O(b^d), với b là độ rộng của cây và d là độ sâu của cây tìm kiếm.
+-  *Độ phức tạp:* O(b^d), với b là độ rộng của cây và d là độ sâu của cây tìm kiếm.
 
 
 ### DFS (Tìm kiếm theo chiều sâu)
 
 DFS sẽ đi sâu vào một nhánh của cây tìm kiếm cho đến khi không thể mở rộng tiếp, rồi quay lại điểm phân nhánh và thử các nhánh khác.
 
--  **Độ tối ưu:** Không tối ưu trong trường hợp không có giới hạn độ sâu.
+-  *Độ tối ưu:* Không tối ưu trong trường hợp không có giới hạn độ sâu.
 
--  **Độ phức tạp:** O(b^d).
+-  *Độ phức tạp:* O(b^d).
 
 ### IDDFS (Tìm kiếm theo chiều sâu lặp lại)
 
 Là sự kết hợp giữa DFS và BFS, IDDFS thực hiện DFS với các độ sâu giới hạn và tăng dần độ sâu cho đến khi tìm thấy giải pháp.
 
--  **Độ tối ưu:** Tốt nhất trong việc sử dụng bộ nhớ khi tìm kiếm trong không gian lớn.
+-  *Độ tối ưu:* Tốt nhất trong việc sử dụng bộ nhớ khi tìm kiếm trong không gian lớn.
 
--  **Độ phức tạp:** O(b^d), nhưng sử dụng bộ nhớ ít hơn so với BFS.
+-  *Độ phức tạp:* O(b^d), nhưng sử dụng bộ nhớ ít hơn so với BFS.
 
 ### UCS (Tìm kiếm chi phí đồng nhất)
 
 UCS tìm kiếm theo chi phí, mở rộng các đỉnh có chi phí thấp nhất trước.
 
--  **Độ tối ưu:** Tìm kiếm tối ưu trong các bài toán có chi phí không âm.
+-  *Độ tối ưu:* Tìm kiếm tối ưu trong các bài toán có chi phí không âm.
 
--  **Độ phức tạp:** O(b^d).
+-  *Độ phức tạp:* O(b^d).
 
 
 ---
@@ -133,19 +140,19 @@ UCS tìm kiếm theo chi phí, mở rộng các đỉnh có chi phí thấp nh�
 
 Thuật toán tìm kiếm có thông tin sử dụng thông tin bổ sung (như hàm đánh giá hoặc hàm heuristic) để hướng dẫn quá trình tìm kiếm. Thông tin này giúp thuật toán lựa chọn những trạng thái tiềm năng hơn để mở rộng, giúp cải thiện hiệu quả tìm kiếm và giảm thiểu chi phí tính toán. Đây là những thuật toán tìm kiếm hiệu quả hơn so với các thuật toán tìm kiếm không có thông tin, đặc biệt trong không gian trạng thái lớn.
 
--  **Ưu điểm:**
+**Ưu điểm:**
 
   -  Tìm kiếm hiệu quả hơn nhờ sử dụng thông tin bổ sung (hàm đánh giá heuristic).
 
   -  Các thuật toán như A* có thể tìm được giải pháp tối ưu trong không gian trạng thái có thông tin đầy đủ.
 
--  **Nhược điểm:**
+**Nhược điểm:**
 
   -  Cần phải có một hàm đánh giá tốt, nếu không thuật toán có thể không tối ưu hoặc tốn kém tài nguyên.
 
   -  Các thuật toán như A* hoặc Greedy có thể tốn thời gian và bộ nhớ khi không gian trạng thái rất lớn.
 
--  **Mô phòng trong trò chơi 8-puzzle:**
+**Mô phòng trong trò chơi 8-puzzle:**
 
 Hoạt động tốt trên trạng thái trung bình đến khó.
 
@@ -156,31 +163,38 @@ Hoạt động tốt trên trạng thái trung bình đến khó.
   -  ✅ Nên áp dụng cho các trạng thái có độ dài từ 12–25 bước.
 
 
+![greedy](greedy.gif.gif)
+![a_start](a_star.gif.gif)
+![ida_star](ida_star.gif.gif)
+
+![uninformed_chart](Screenshot%202025-05-18%204124.png)
+
+
 ### Greedy
 
 Thuật toán Greedy đưa ra lựa chọn tốt nhất trong bước hiện tại mà không quan tâm đến tương lai, nhằm tối ưu hóa bước tiếp theo.
 
--  **Độ tối ưu:** Không tối ưu, có thể dẫn đến giải pháp không chính xác.
+-  *Độ tối ưu:* Không tối ưu, có thể dẫn đến giải pháp không chính xác.
 
--  **Độ phức tạp:** O(b^d).
+-  *Độ phức tạp:* O(b^d).
 
 
 ### A* (A-star)
 
 A* kết hợp giữa tìm kiếm theo chi phí và tìm kiếm theo độ gần với mục tiêu, sử dụng hàm đánh giá f(n) = g(n) + h(n) để lựa chọn đỉnh tiếp theo.
 
--  **Độ tối ưu:** Tìm kiếm tối ưu nếu hàm đánh giá h(n) không vượt quá chi phí thực tế.
+-  *Độ tối ưu:* Tìm kiếm tối ưu nếu hàm đánh giá h(n) không vượt quá chi phí thực tế.
 
--  **Độ phức tạp:** O(b^d).
+-  *Độ phức tạp:* O(b^d).
 
 
 ### IDA* (Iterative Deepening A*)
 
 IDA* kết hợp giữa IDDFS và A*, thực hiện A* với độ sâu lặp lại để tiết kiệm bộ nhớ.
 
--  **Độ tối ưu:** Tối ưu khi cần tiết kiệm bộ nhớ.
+-  *Độ tối ưu:* Tối ưu khi cần tiết kiệm bộ nhớ.
 
--  **Độ phức tạp:** O(b^d).
+-  *Độ phức tạp:* O(b^d).
 
 
 ---
@@ -188,81 +202,91 @@ IDA* kết hợp giữa IDDFS và A*, thực hiện A* với độ sâu lặp l�
 
 Thuật toán tìm kiếm cục bộ tìm kiếm trong không gian trạng thái chỉ xung quanh vị trí hiện tại mà không cần phải theo dõi toàn bộ không gian trạng thái. Điều này giúp tiết kiệm bộ nhớ, nhưng cũng có thể dẫn đến các vấn đề như mắc kẹt tại tối ưu cục bộ. Các thuật toán này thích hợp cho những bài toán có không gian trạng thái lớn, nhưng không đảm bảo sẽ tìm được giải pháp tối ưu toàn cục.
 
--  **Ưu điểm:**
+**Ưu điểm:**
 
-  -  Tiết kiệm bộ nhớ và tính toán vì chỉ tìm kiếm trong một phần không gian trạng thái.
+-  Tiết kiệm bộ nhớ và tính toán vì chỉ tìm kiếm trong một phần không gian trạng thái.
 
-  -  Các thuật toán như Simulated Annealing có thể tránh được tối ưu cục bộ và tìm được tối ưu toàn cục trong một số trường hợp.
+-  Các thuật toán như Simulated Annealing có thể tránh được tối ưu cục bộ và tìm được tối ưu toàn cục trong một số trường hợp.
 
--  **Nhược điểm:**
+**Nhược điểm:**
 
-  -  Không đảm bảo tìm ra giải pháp tối ưu toàn cục.
+-  Không đảm bảo tìm ra giải pháp tối ưu toàn cục.
 
-  -  Các thuật toán như SHC có thể bị kẹt ở một tối ưu cục bộ nếu không có chiến lược làm lạnh thích hợp (như Simulated Annealing).
+-  Các thuật toán như SHC có thể bị kẹt ở một tối ưu cục bộ nếu không có chiến lược làm lạnh thích hợp (như Simulated Annealing).
 
--  **Mô phòng trong trò chơi 8-puzzle:**
+**Mô phòng trong trò chơi 8-puzzle:**
 
-  -  ✅ Chọn trạng thái có độ dài lời giải khoảng 10 bước để tránh:
+-  ✅ Chọn trạng thái có độ dài lời giải khoảng 10 bước để tránh:
 
-  -  Quá dễ → không thể hiện rõ thuật toán.
+-  Quá dễ → không thể hiện rõ thuật toán.
 
-  -  Quá khó → kẹt cục bộ hoặc không tìm ra lời giải.
+-  Quá khó → kẹt cục bộ hoặc không tìm ra lời giải.
 
-  -  ⚠️ Nên giới hạn độ sâu từ 20–30 bước hoặc max\_steps cụ thể.
+-  ⚠️ Nên giới hạn độ sâu từ 20–30 bước hoặc max\_steps cụ thể.
+
+
+![shc](shc.gif.gif)
+![sahc](sahc.gif.gif)
+![sthc](sthc.gif.gif)
+![beam](beam.gif.gif)
+![sa](sa.gif.gif)
+![ga](ga.gif.gif)
+
+![uninformed_chart](Screenshot%202025-05-18%205749.png)
 
 
 ### SHC (Simple Hill Climbing)
 
 SHC là một thuật toán tìm kiếm cục bộ đơn giản, trong đó tại mỗi bước, thuật toán chỉ chọn một trạng thái kề tốt hơn trạng thái hiện tại (nếu có) và chuyển đến đó. Thuật toán dừng khi không tìm được trạng thái nào tốt hơn.
 
--  **Độ tối ưu:** Không đảm bảo tìm được tối ưu toàn cục, dễ rơi vào bẫy tối ưu cục bộ.
+-  *Độ tối ưu:* Không đảm bảo tìm được tối ưu toàn cục, dễ rơi vào bẫy tối ưu cục bộ.
 
--  **Độ phức tạp:** O(b^d).
+-  *Độ phức tạp:* O(b^d).
 
 
 ### SAHC (Steepest-Ascent Hill Climbing)
 
 SAHC là biến thể của SHC, trong đó tại mỗi bước, thuật toán đánh giá tất cả các trạng thái kề và chọn trạng thái có giá trị đánh giá tốt nhất (dốc nhất) để di chuyển.
 
--  **Độ tối ưu:** Vẫn không đảm bảo tìm được tối ưu toàn cục vì vẫn có thể mắc kẹt tại cực trị cục bộ hoặc cao nguyên.
+-  *Độ tối ưu:* Vẫn không đảm bảo tìm được tối ưu toàn cục vì vẫn có thể mắc kẹt tại cực trị cục bộ hoặc cao nguyên.
 
--  **Độ phức tạp:** O(b^d).
+-  *Độ phức tạp:* O(b^d).
 
 
 ### Stochastic HC (Stochastic Hill Climbing)
 
 Là một phiên bản ngẫu nhiên của SHC, nơi các bước đi không nhất thiết phải theo chiều dốc.
 
--  **Độ tối ưu:** Không tối ưu.
+-  *Độ tối ưu:* Không tối ưu.
 
--  **Độ phức tạp:** O(b^d).
+-  *Độ phức tạp:* O(b^d).
 
  
 ### Beam Search
 
 Thuật toán tìm kiếm cục bộ này chỉ mở rộng một số đỉnh giới hạn tại mỗi mức.
 
--  **Độ tối ưu:** Có thể không tối ưu vì giới hạn số đỉnh mở rộng.
+-  *Độ tối ưu:* Có thể không tối ưu vì giới hạn số đỉnh mở rộng.
 
--  **Độ phức tạp:** O(b^k), với k là số lượng beam.
+-  *Độ phức tạp:** O(b^k), với k là số lượng beam.
 
 
 ### Simulated Annealing
 
 Thuật toán làm lạnh mô phỏng mô phỏng quá trình vật lý của làm lạnh từ từ để tránh tối ưu cục bộ.
 
--  **Độ tối ưu:** Tìm tối ưu toàn cục trong không gian trạng thái lớn.
+-  *Độ tối ưu:* Tìm tối ưu toàn cục trong không gian trạng thái lớn.
 
--  **Độ phức tạp:** O(b^d).
+-  *Độ phức tạp:* O(b^d).
 
 
 ### Genetic Algorithm
 
 Thuật toán di truyền mô phỏng quá trình chọn lọc tự nhiên để tìm ra giải pháp tối ưu.
 
--  **Độ tối ưu:** Tìm giải pháp gần tối ưu.
+-  *Độ tối ưu:* Tìm giải pháp gần tối ưu.
 
--  **Độ phức tạp:** O(b^d).
+-  *Độ phức tạp:* O(b^d).
 
 
  ---
@@ -270,52 +294,58 @@ Thuật toán di truyền mô phỏng quá trình chọn lọc tự nhiên để
 
 Thuật toán ràng buộc được sử dụng để giải quyết các bài toán trong đó các biến phải thỏa mãn một tập hợp các ràng buộc. Những bài toán này thường gặp trong các lĩnh vực như phân công, lịch trình, và tổ chức. Các thuật toán ràng buộc không chỉ tìm kiếm một giải pháp mà còn phải kiểm tra tính hợp lệ của các lựa chọn trong suốt quá trình tìm kiếm.
 
--  **Ưu điểm:**
+**Ưu điểm:**
 
-  -  Tốt cho các bài toán có ràng buộc rõ ràng, như phân bổ tài nguyên hoặc lập kế hoạch.
+-  Tốt cho các bài toán có ràng buộc rõ ràng, như phân bổ tài nguyên hoặc lập kế hoạch.
 
-  -  Các thuật toán như Min-Conflicts có thể tìm được giải pháp tốt với các bài toán ràng buộc phức tạp.
+-  Các thuật toán như Min-Conflicts có thể tìm được giải pháp tốt với các bài toán ràng buộc phức tạp.
 
--  **Nhược điểm:**
+**Nhược điểm:**
 
-  -  Các thuật toán này không phải lúc nào cũng có thể áp dụng cho tất cả loại bài toán tìm kiếm.
+-  Các thuật toán này không phải lúc nào cũng có thể áp dụng cho tất cả loại bài toán tìm kiếm.
 
-  -  Tốn thời gian và tài nguyên khi số lượng ràng buộc và biến tăng lên.
+-  Tốn thời gian và tài nguyên khi số lượng ràng buộc và biến tăng lên.
 
--  **Mô phòng trong trò chơi 8-puzzle:**
+**Mô phòng trong trò chơi 8-puzzle:**
 
-  -  Hữu ích khi kiểm soát biến số rõ ràng.
+-  Hữu ích khi kiểm soát biến số rõ ràng.
 
-  -  Không phải luôn phù hợp với các bài toán trạng thái như 8-Puzzle.
+-  Không phải luôn phù hợp với các bài toán trạng thái như 8-Puzzle.
 
-  -  ✅ Áp dụng trạng thái vừa phải (8–12 bước) để thấy rõ hiệu quả loại trừ.
+-  ✅ Áp dụng trạng thái vừa phải (8–12 bước) để thấy rõ hiệu quả loại trừ.
 
+
+![backtracking](backtracking.gif.gif)
+![forward](forward.gif.gif)
+![min_C](min_c.gif.gif)
+
+![uninformed_chart](Screenshot%202025-05-18%210253.png)
 
 ### Backtracking
 
 Thuật toán quay lui, thử các lựa chọn khác nhau và quay lại khi gặp mâu thuẫn.
 
--  **Độ tối ưu:** Tìm kiếm giải pháp tối ưu.
+-  *Độ tối ưu:* Tìm kiếm giải pháp tối ưu.
 
--  **Độ phức tạp:** O(b^d), có thể giảm với việc cắt tỉa (pruning).
+-  *Độ phức tạp:* O(b^d), có thể giảm với việc cắt tỉa (pruning).
 
 
 ### Forward Checking
 
 Kiểm tra các ràng buộc phía trước để loại bỏ các lựa chọn không khả thi.
 
--  **Độ tối ưu:** Tối ưu hơn backtracking khi kiểm tra trước.
+-  *Độ tối ưu:* Tối ưu hơn backtracking khi kiểm tra trước.
 
--  **Độ phức tạp:** O(b^d), nhưng có thể giảm đáng kể.
+-  *Độ phức tạp:* O(b^d), nhưng có thể giảm đáng kể.
 
 
 ### Min-Conflicts
 
 Thuật toán tìm giải pháp tối ưu bằng cách giảm số lượng mâu thuẫn tại mỗi bước.
 
--  **Độ tối ưu:** Có thể tìm kiếm giải pháp tối ưu hoặc gần tối ưu.
+-  *Độ tối ưu:* Có thể tìm kiếm giải pháp tối ưu hoặc gần tối ưu.
 
--  **Độ phức tạp:** O(b^d), tùy vào cách cắt tỉa và số mâu thuẫn.
+-  *Độ phức tạp:* O(b^d), tùy vào cách cắt tỉa và số mâu thuẫn.
 
 
 ---
@@ -323,87 +353,88 @@ Thuật toán tìm giải pháp tối ưu bằng cách giảm số lượng mâu
 
 Thuật toán tìm kiếm trong môi trường phức tạp được áp dụng trong các bài toán mà môi trường không hoàn toàn rõ ràng hoặc không đầy đủ thông tin. Những thuật toán này có thể làm việc trong các tình huống không chắc chắn, nơi các thông tin về trạng thái không có sẵn hoặc chỉ có thể đoán được, ví dụ như trong các bài toán tìm kiếm sensorless hoặc tìm kiếm And-Or.
 
--  **Ưu điểm:**
+**Ưu điểm:**
 
-  -  Phù hợp với các bài toán có sự không chắc chắn hoặc không đầy đủ thông tin.
+-  Phù hợp với các bài toán có sự không chắc chắn hoặc không đầy đủ thông tin.
 
-  -  Các thuật toán như Sensorless hoặc And-Or Search có thể giải quyết các vấn đề trong môi trường phức tạp mà các thuật toán truyền thống gặp khó khăn.
+-  Các thuật toán như Sensorless hoặc And-Or Search có thể giải quyết các vấn đề trong môi trường phức tạp mà các thuật toán truyền thống gặp khó khăn.
 
--  **Nhược điểm:**
+**Nhược điểm:**
 
-  -  Cần có môi trường và sự mô phỏng phức tạp, điều này có thể tăng độ khó và chi phí tính toán.
+-  Cần có môi trường và sự mô phỏng phức tạp, điều này có thể tăng độ khó và chi phí tính toán.
 
-  -  Các thuật toán này có thể kém hiệu quả nếu môi trường không được mô tả rõ ràng hoặc thiếu dữ liệu.
+-  Các thuật toán này có thể kém hiệu quả nếu môi trường không được mô tả rõ ràng hoặc thiếu dữ liệu.
 
--  **Mô phòng trong trò chơi 8-puzzle:** Chủ yếu để minh họa ý tưởng, không thực tế trong 8-Puzzle cơ bản.
+**Mô phòng trong trò chơi 8-puzzle:** Chủ yếu để minh họa ý tưởng, không thực tế trong 8-Puzzle cơ bản.
 
-  -  ❗Chưa phát huy tối đa sức mạnh trong trò chơi này.
-
-
+-  ❗Chưa phát huy tối đa sức mạnh trong trò chơi này.
 
 ### Sensorless
 
 Thuật toán tìm kiếm làm việc trong môi trường không có thông tin về trạng thái.
 
--  **Độ tối ưu:** Không tối ưu, vì thiếu thông tin từ môi trường.
+-  *Độ tối ưu:* Không tối ưu, vì thiếu thông tin từ môi trường.
 
--  **Độ phức tạp:** O(b^d).
+-  *Độ phức tạp:* O(b^d).
 
 
 ### And-Or Search
 
 Tìm kiếm trong môi trường phân nhánh, tìm kiếm các chuỗi hành động phù hợp với các ràng buộc.
 
--  **Độ tối ưu:** Tìm kiếm giải pháp tối ưu cho các bài toán phân nhánh.
+-  *Độ tối ưu:* Tìm kiếm giải pháp tối ưu cho các bài toán phân nhánh.
 
--  **Độ phức tạp:** O(b^d).
+-  *Độ phức tạp:* O(b^d).
 
 ---
 ## 6. Thuật toán học tăng cường (Reinforcement Learning)
 
 Thuật toán học tăng cường là một phương pháp học máy trong đó một tác nhân học cách hành động tối ưu trong một môi trường thông qua việc nhận thưởng hoặc phạt sau mỗi hành động. Thay vì tìm kiếm giải pháp từ trước, tác nhân học qua kinh nghiệm và cải thiện hiệu suất qua thời gian. Điều này giúp giải quyết các bài toán phức tạp và động, nơi môi trường có thể thay đổi theo từng bước.
 
--  **Ưu điểm:**
+**Ưu điểm:**
 
-  -  AI có thể học hỏi từ môi trường và tối ưu hóa hành vi của mình theo thời gian.
+-  AI có thể học hỏi từ môi trường và tối ưu hóa hành vi của mình theo thời gian.
 
-  -  Phù hợp với các bài toán động và không chắc chắn, nơi môi trường thay đổi theo từng hành động.
+-  Phù hợp với các bài toán động và không chắc chắn, nơi môi trường thay đổi theo từng hành động.
 
--  **Nhược điểm:**
+**Nhược điểm:**
 
-  -  Cần một lượng lớn dữ liệu và thời gian để huấn luyện.
+-  Cần một lượng lớn dữ liệu và thời gian để huấn luyện.
 
-  -  Các thuật toán như Q-Learning có thể không hiệu quả trong không gian trạng thái lớn hoặc phức tạp mà không có chiến lược học thích hợp.
+-  Các thuật toán như Q-Learning có thể không hiệu quả trong không gian trạng thái lớn hoặc phức tạp mà không có chiến lược học thích hợp.
 
--  **Mô phòng trong trò chơi 8-puzzle:**
+**Mô phòng trong trò chơi 8-puzzle:**
 
-  -  Đặt điều kiện thưởng, phạt để tạo động lực cho AI học tăng cường. Và ngày càng tìm ra các giải pháp tối ưu hơn.
+-  Đặt điều kiện thưởng, phạt để tạo động lực cho AI học tăng cường. Và ngày càng tìm ra các giải pháp tối ưu hơn.
 
-     -  +100 điểm nếu đạt goal
+  -  +100 điểm nếu đạt goal
 
-     -  +1 điểm với mỗi ô đúng vị trí
+  -  +1 điểm với mỗi ô đúng vị trí
 
-     -  -5 điểm nếu trạng thái không tiến bộ (số ô đúng không tăng)
+  -  -5 điểm nếu trạng thái không tiến bộ (số ô đúng không tăng)
 
-     -  -20 điểm nếu lặp trạng thái
+  -  -20 điểm nếu lặp trạng thái
 
-  -  Trạng thái ban đầu nên đơn giản, sau đó nâng dần độ khó.
+-  Trạng thái ban đầu nên đơn giản, sau đó nâng dần độ khó.
 
-  -  ✅ Thích hợp để demo khả năng học từ môi trường động.
+-  ✅ Thích hợp để demo khả năng học từ môi trường động.
 
 
+![q_learning](q_learning.gif.gif)
+
+![uninformed_chart](Screenshot%202025-05-18%210536.png)
 
 ### Q-Learning
 
 Thuật toán học tăng cường, học từ kinh nghiệm bằng cách tối ưu hóa giá trị Q cho các trạng thái và hành động.
 
--  **Độ tối ưu:** Tìm kiếm giải pháp tối ưu với đủ số lần học.
+-  *Độ tối ưu:* Tìm kiếm giải pháp tối ưu với đủ số lần học.
 
--  **Độ phức tạp:** O(b^d), phụ thuộc vào việc cập nhật Q-table.
+-  *Độ phức tạp:* O(b^d), phụ thuộc vào việc cập nhật Q-table.
 
 ---
 # GIAO DIỆN
-![Giao diện trò chơi 8-Puzzle mô phỏng các thuật toán tìm kiếm](https://github.com/lumi3012/23110297_BaiTapCaNhan_AI/blob/main/Screenshot%202025-05-18%20210544.png)
+![Giao diện trò chơi 8-Puzzle mô phỏng các thuật toán tìm kiếm](Screenshot%202025-05-18%20210544.png)
 Giao diện trò chơi được chia thành ba khu vực chính theo chiều ngang: khu vực chọn thuật toán tìm kiếm, giao diện trò chơi 8-puzzle, và khu vực hiển thị biểu đồ trực quan hiệu quả thuật toán.
 
 Khu vực thuật toán bao gồm 6 nhóm thuật toán, mỗi nhóm có một combobox chứa danh sách các thuật toán tương ứng, giúp người dùng dễ dàng lựa chọn và đảm bảo tính chính xác khi xác định thuật toán sẽ thực hiện. Khi người dùng chọn một thuật toán trong bất kỳ nhóm nào, các nhóm còn lại sẽ tự động được đặt lại về trạng thái rỗng để tránh xung đột tín hiệu. Việc lựa chọn thuật toán đồng nghĩa với việc hệ thống bắt đầu khởi chạy quá trình tìm kiếm lời giải bằng thuật toán đó.
