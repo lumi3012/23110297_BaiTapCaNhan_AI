@@ -26,67 +26,72 @@ Các thuật toán AI được triển khai giúp giải quyết bài toán 8-Pu
 
 Thông qua dự án này, người dùng có thể dễ dàng quan sát quá trình giải quyết bài toán 8-Puzzle qua giao diện đồ họa, với các thuật toán khác nhau hiển thị rõ ràng những bước đi và quá trình tìm kiếm trong không gian trạng thái.
 
-## 📚Mục lục
-- [Tổng quan về bài tập](#tổng-quan-về-bài-tập)
-- [Thuật toán tìm kiếm không có thông tin](#1.-thuật-toán-tìm-kiếm-không-có-thông-tin)
-  - [BFS](#bfs)
-  - [DFS](#dfs)
-  - [IDDFS](#iddfs)
-  - [UCS](#ucs)
-- [Thuật toán tìm kiếm có thông tin](#thuật-toán-tìm-kiếm-có-thông-tin)
+## 📘 Mục lục
+
+- [1. Thuật toán tìm kiếm không có thông tin](#1-thuật-toán-tìm-kiếm-không-có-thông-tin)
+  - [BFS](#bfs-tìm-kiếm-theo-chiều-rộng)
+  - [DFS](#dfs-tìm-kiếm-theo-chiều-sâu)
+  - [IDDFS](#iddfs-tìm-kiếm-theo-chiều-sâu-lặp-lại)
+  - [UCS](#ucs-tìm-kiếm-chi-phí-đồng-nhất)
+
+- [2. Thuật toán tìm kiếm có thông tin](#2-thuật-toán-tìm-kiếm-có-thông-tin-informed-search)
   - [Greedy](#greedy)
-  - [A*](#a)
-  - [IDA*](#ida)
-- [Thuật toán tìm kiếm cục bộ](#thuật-toán-tìm-kiếm-cục-bộ)
-  - [SHC](#shc)
-  - [SAHC](#sahc)
-  - [Stochastic HC](#stochastic-hc)
+  - [A*](#a-a-star)
+  - [IDA*](#ida-iterative-deepening-a)
+
+- [3. Thuật toán tìm kiếm cục bộ](#3-thuật-toán-tìm-kiếm-cục-bộ-local-search)
+  - [SHC](#shc-simple-hill-climbing)
+  - [SAHC](#sahc-steepest-ascent-hill-climbing)
+  - [Stochastic HC](#stochastic-hc-stochastic-hill-climbing)
   - [Beam Search](#beam-search)
   - [Simulated Annealing](#simulated-annealing)
   - [Genetic Algorithm](#genetic-algorithm)
-- [Thuật toán ràng buộc (CSPs)](#thuật-toán-ràng-buộc-csps)
+
+- [4. Thuật toán ràng buộc (CSPs)](#4-thuật-toán-ràng-buộc-csps---constraint-satisfaction-problems)
   - [Backtracking](#backtracking)
   - [Forward Checking](#forward-checking)
   - [Min-Conflicts](#min-conflicts)
-- [Thuật toán tìm kiếm trong môi trường phức tạp](#thuật-toán-tìm-kiếm-trong-môi-trường-phức-tạp)
+
+- [5. Thuật toán tìm kiếm trong môi trường phức tạp](#5-thuật-toán-tìm-kiếm-trong-môi-trường-phức-tạp-complex-environment)
   - [Sensorless](#sensorless)
   - [And-Or Search](#and-or-search)
-- [Thuật toán học tăng cường (Reinforcement Learning)](#thuật-toán-học-tăng-cường-reinforcement-learning)
+
+- [6. Thuật toán học tăng cường (Reinforcement Learning)](#6-thuật-toán-học-tăng-cường-reinforcement-learning)
   - [Q-Learning](#q-learning)
+
 - [Giao diện](#giao-diện)
 - [Kết luận](#kết-luận)
 
-##1. Thuật toán tìm kiếm không có thông tin
+---
+## 1. Thuật toán tìm kiếm không có thông tin
 
 Thuật toán tìm kiếm không có thông tin là các thuật toán tìm kiếm mà không sử dụng bất kỳ thông tin bổ sung nào ngoài trạng thái ban đầu và các trạng thái liên quan. Các thuật toán này chỉ dựa vào việc mở rộng các trạng thái theo một thứ tự cụ thể mà không dựa vào đánh giá về chất lượng của các trạng thái đó. Do không có "thông tin thông minh", các thuật toán này có thể tốn kém về bộ nhớ và thời gian.
 
--**Ưu điểm:**
+-   **Ưu điểm:**
 
-Đơn giản và dễ hiểu, không yêu cầu thông tin bổ sung ngoài trạng thái ban đầu.
+  - Đơn giản và dễ hiểu, không yêu cầu thông tin bổ sung ngoài trạng thái ban đầu.
 
-Tìm kiếm theo chiều rộng (BFS) đảm bảo tìm được giải pháp tối ưu nếu tồn tại.
+  - Tìm kiếm theo chiều rộng (BFS) đảm bảo tìm được giải pháp tối ưu nếu tồn tại.
 
-Nhược điểm:
+-   **Nhược điểm:**
 
-Tiêu tốn nhiều bộ nhớ và thời gian khi không gian trạng thái lớn.
+  - Tiêu tốn nhiều bộ nhớ và thời gian khi không gian trạng thái lớn.
 
-Các thuật toán như DFS có thể không tìm được giải pháp nếu không có giới hạn độ sâu.
+  - Các thuật toán như DFS có thể không tìm được giải pháp nếu không có giới hạn độ sâu.
 
-Không tối ưu trong những bài toán phức tạp, vì chúng không sử dụng thông tin bổ sung để hướng dẫn tìm kiếm.
+  - Không tối ưu trong những bài toán phức tạp, vì chúng không sử dụng thông tin bổ sung để hướng dẫn tìm kiếm.
 
-Mô phòng trong trò chơi 8-puzzle:
+-   **Mô phòng trong trò chơi 8-puzzle:**
 
 Hiệu quả với hầu hết trạng thái, kể cả trạng thái khó.
 
-Tuy nhiên:
+-   **Tuy nhiên:**
 
-DFS cần giới hạn độ sâu để tránh lặp vô hạn.
+  - DFS cần giới hạn độ sâu để tránh lặp vô hạn.
 
-IDDFS kết hợp ưu điểm của DFS và BFS.
+  - IDDFS kết hợp ưu điểm của DFS và BFS.
 
-Dùng tốt cho trạng thái có độ sâu từ 15–20 bước.
-
-
+  - Dùng tốt cho trạng thái có độ sâu từ 15–20 bước.
 
 
 
@@ -120,13 +125,15 @@ Dùng tốt cho trạng thái có độ sâu từ 15–20 bước.
 
 
 
-BFS (Tìm kiếm theo chiều rộng)
+
+
+### BFS (Tìm kiếm theo chiều rộng)
 
 Thuật toán tìm kiếm theo chiều rộng (BFS) sẽ mở rộng các đỉnh của cây tìm kiếm từ gốc theo từng mức độ, kiểm tra tất cả các đỉnh cùng một mức trước khi chuyển sang mức tiếp theo.
 
-Độ tối ưu: Tối ưu đối với các bài toán tìm kiếm vô hạn nếu không có thông tin.
+-  **Độ tối ưu:** Tối ưu đối với các bài toán tìm kiếm vô hạn nếu không có thông tin.
 
-Độ phức tạp: O(b^d), với b là độ rộng của cây và d là độ sâu của cây tìm kiếm.
+-  **Độ phức tạp:** O(b^d), với b là độ rộng của cây và d là độ sâu của cây tìm kiếm.
 
 
 
@@ -513,10 +520,8 @@ Thuật toán học tăng cường, học từ kinh nghiệm bằng cách tối 
 
 
 
-GIAO DIỆN
-
-
-
+# GIAO DIỆN
+![Giao diện trò chơi 8-Puzzle mô phỏng các thuật toán tìm kiếm](img/solve_example.png)
 Giao diện trò chơi được chia thành ba khu vực chính theo chiều ngang: khu vực chọn thuật toán tìm kiếm, giao diện trò chơi 8-puzzle, và khu vực hiển thị biểu đồ trực quan hiệu quả thuật toán.
 
 Khu vực thuật toán bao gồm 6 nhóm thuật toán, mỗi nhóm có một combobox chứa danh sách các thuật toán tương ứng, giúp người dùng dễ dàng lựa chọn và đảm bảo tính chính xác khi xác định thuật toán sẽ thực hiện. Khi người dùng chọn một thuật toán trong bất kỳ nhóm nào, các nhóm còn lại sẽ tự động được đặt lại về trạng thái rỗng để tránh xung đột tín hiệu. Việc lựa chọn thuật toán đồng nghĩa với việc hệ thống bắt đầu khởi chạy quá trình tìm kiếm lời giải bằng thuật toán đó.
@@ -527,7 +532,7 @@ Ngay bên dưới giao diện trò chơi là ba trạng thái mẫu được s�
 
 Khu vực biểu đồ đóng vai trò không kém phần quan trọng. Tại đây, hệ thống hiển thị biểu đồ cột để so sánh hiệu quả của các thuật toán trong cùng một nhóm, dựa trên thời gian tìm kiếm lời giải và số bước thực hiện. Biểu đồ này cung cấp cái nhìn trực quan giúp người dùng dễ dàng đánh giá và so sánh mức độ hiệu quả giữa các thuật toán. Hiện tại, hệ thống cho phép vẽ biểu đồ cho bất kỳ trạng thái khởi đầu nào được chọn, tuy nhiên, chưa bắt buộc các thuật toán cùng nhóm phải có chung trạng thái xuất phát. Để đảm bảo việc so sánh chính xác hơn, người dùng được khuyến khích chọn cùng một trạng thái khởi đầu (có thể chọn trạng thái mẫu từ ô start\_state) cho tất cả các thuật toán trong một nhóm.
 
-KẾT LUẬN
+# KẾT LUẬN
 
 Dự án 8-Puzzle AI Game này không chỉ giúp người chơi trải nghiệm trực quan quá trình giải quyết bài toán 8-Puzzle mà còn là một ví dụ tuyệt vời về cách các thuật toán AI có thể áp dụng trong việc giải quyết các bài toán tìm kiếm phức tạp. Qua việc so sánh các thuật toán tìm kiếm không có thông tin, tìm kiếm có thông tin và các thuật toán tìm kiếm cục bộ, người dùng có thể nhận thấy rõ sự khác biệt về hiệu quả và thời gian thực thi của từng thuật toán. Các thuật toán học tăng cường như Q-Learning cũng cho thấy khả năng học hỏi và cải thiện hiệu suất trong môi trường phức tạp.
 
