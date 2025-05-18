@@ -30,7 +30,7 @@ Thông qua dự án này, người dùng có thể dễ dàng quan sát quá tr�
 
 - [Tổng quan về bài tập](#tổng-quan-về-bài-tập)
 - [Mục tiêu](#mục-tiêu)
-- [1. Thuật toán tìm kiếm không có thông tin](#1-thuật-toán-tìm-kiếm-không-có-thông-tin)
+- [1. Thuật toán tìm kiếm không có thông tin](#1-thuật-toán-tìm-kiếm-không-có-thông-tin-uninformed-search)
   - [BFS](#bfs-tìm-kiếm-theo-chiều-rộng)
   - [DFS](#dfs-tìm-kiếm-theo-chiều-sâu)
   - [IDDFS](#iddfs-tìm-kiếm-theo-chiều-sâu-lặp-lại)
@@ -65,7 +65,9 @@ Thông qua dự án này, người dùng có thể dễ dàng quan sát quá tr�
 - [Kết luận](#kết-luận)
 
 ---
-## 1. Thuật toán tìm kiếm không có thông tin
+## 1. Thuật toán tìm kiếm không có thông tin (Uninformed Search)
+
+[Xem đoạn mã BFS từ dòng 523 đến 605](23110297_NguyenThiQuyen_BaiTapCaNhan.py#L523-L605)
 
 Thuật toán tìm kiếm không có thông tin là các thuật toán tìm kiếm mà không sử dụng bất kỳ thông tin bổ sung nào ngoài trạng thái ban đầu và các trạng thái liên quan. Các thuật toán này chỉ dựa vào việc mở rộng các trạng thái theo một thứ tự cụ thể mà không dựa vào đánh giá về chất lượng của các trạng thái đó. Do không có "thông tin thông minh", các thuật toán này có thể tốn kém về bộ nhớ và thời gian.
 
