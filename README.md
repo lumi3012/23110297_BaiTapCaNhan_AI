@@ -28,6 +28,8 @@ Thông qua dự án này, người dùng có thể dễ dàng quan sát quá tr�
 
 ## 📘 Mục lục
 
+- [Tổng quan về bài tập](#tổng-quan-về-bài-tập)
+- [Mục tiêu](#mục-tiêu)
 - [1. Thuật toán tìm kiếm không có thông tin](#1-thuật-toán-tìm-kiếm-không-có-thông-tin)
   - [BFS](#bfs-tìm-kiếm-theo-chiều-rộng)
   - [DFS](#dfs-tìm-kiếm-theo-chiều-sâu)
@@ -232,7 +234,7 @@ Thuật toán tìm kiếm cục bộ tìm kiếm trong không gian trạng thái
 ![sa](sa.gif.gif)
 ![ga](ga.gif.gif)
 
-![local_chart](Screenshot%202025-05-18%20205749.png))
+![local_chart](Screenshot%202025-05-18%20205749.png)
 
 
 ### SHC (Simple Hill Climbing)
@@ -319,7 +321,7 @@ Thuật toán ràng buộc được sử dụng để giải quyết các bài t
 ![forward](forward.gif.gif)
 ![min_C](min_c.gif.gif)
 
-![csps_chart](Screenshot%202025-05-18%20210253.png))
+![csps_chart](Screenshot%202025-05-18%20210253.png)
 
 ### Backtracking
 
@@ -407,13 +409,13 @@ Thuật toán học tăng cường là một phương pháp học máy trong đ�
 
 -  Đặt điều kiện thưởng, phạt để tạo động lực cho AI học tăng cường. Và ngày càng tìm ra các giải pháp tối ưu hơn.
 
-  -  +100 điểm nếu đạt goal
+  +100 điểm nếu đạt goal
 
-  -  +1 điểm với mỗi ô đúng vị trí
+  +1 điểm với mỗi ô đúng vị trí
 
-  -  -5 điểm nếu trạng thái không tiến bộ (số ô đúng không tăng)
+  -5 điểm nếu trạng thái không tiến bộ (số ô đúng không tăng)
 
-  -  -20 điểm nếu lặp trạng thái
+  -20 điểm nếu lặp trạng thái
 
 -  Trạng thái ban đầu nên đơn giản, sau đó nâng dần độ khó.
 
