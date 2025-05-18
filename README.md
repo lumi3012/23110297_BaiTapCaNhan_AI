@@ -142,6 +142,8 @@ UCS tìm kiếm theo chi phí, mở rộng các đỉnh có chi phí thấp nh�
 ---
 ## 2. Thuật toán tìm kiếm có thông tin (Informed Search)
 
+[Xem đoạn mã BFS từ dòng 607 đến 692](23110297_NguyenThiQuyen_BaiTapCaNhan.py#L607-L692)
+
 Thuật toán tìm kiếm có thông tin sử dụng thông tin bổ sung (như hàm đánh giá hoặc hàm heuristic) để hướng dẫn quá trình tìm kiếm. Thông tin này giúp thuật toán lựa chọn những trạng thái tiềm năng hơn để mở rộng, giúp cải thiện hiệu quả tìm kiếm và giảm thiểu chi phí tính toán. Đây là những thuật toán tìm kiếm hiệu quả hơn so với các thuật toán tìm kiếm không có thông tin, đặc biệt trong không gian trạng thái lớn.
 
 **Ưu điểm:**
@@ -203,6 +205,8 @@ IDA* kết hợp giữa IDDFS và A*, thực hiện A* với độ sâu lặp l�
 
 ---
 ## 3. Thuật toán tìm kiếm cục bộ (Local Search)
+
+[Xem đoạn mã BFS từ dòng 694 đến 919](23110297_NguyenThiQuyen_BaiTapCaNhan.py#L694-L919)
 
 Thuật toán tìm kiếm cục bộ tìm kiếm trong không gian trạng thái chỉ xung quanh vị trí hiện tại mà không cần phải theo dõi toàn bộ không gian trạng thái. Điều này giúp tiết kiệm bộ nhớ, nhưng cũng có thể dẫn đến các vấn đề như mắc kẹt tại tối ưu cục bộ. Các thuật toán này thích hợp cho những bài toán có không gian trạng thái lớn, nhưng không đảm bảo sẽ tìm được giải pháp tối ưu toàn cục.
 
@@ -296,6 +300,8 @@ Thuật toán di truyền mô phỏng quá trình chọn lọc tự nhiên để
  ---
 ## 4. Thuật toán ràng buộc (CSPs - Constraint Satisfaction Problems)
 
+[Xem đoạn mã BFS từ dòng 1033 đến 1123](23110297_NguyenThiQuyen_BaiTapCaNhan.py#L1033-L1123)
+
 Thuật toán ràng buộc được sử dụng để giải quyết các bài toán trong đó các biến phải thỏa mãn một tập hợp các ràng buộc. Những bài toán này thường gặp trong các lĩnh vực như phân công, lịch trình, và tổ chức. Các thuật toán ràng buộc không chỉ tìm kiếm một giải pháp mà còn phải kiểm tra tính hợp lệ của các lựa chọn trong suốt quá trình tìm kiếm.
 
 **Ưu điểm:**
@@ -355,6 +361,8 @@ Thuật toán tìm giải pháp tối ưu bằng cách giảm số lượng mâu
 ---
 ## 5. Thuật toán tìm kiếm trong môi trường phức tạp (Complex Environment)
 
+[Xem đoạn mã BFS từ dòng 921 đến 1031](23110297_NguyenThiQuyen_BaiTapCaNhan.py#L921-L1031)
+
 Thuật toán tìm kiếm trong môi trường phức tạp được áp dụng trong các bài toán mà môi trường không hoàn toàn rõ ràng hoặc không đầy đủ thông tin. Những thuật toán này có thể làm việc trong các tình huống không chắc chắn, nơi các thông tin về trạng thái không có sẵn hoặc chỉ có thể đoán được, ví dụ như trong các bài toán tìm kiếm sensorless hoặc tìm kiếm And-Or.
 
 **Ưu điểm:**
@@ -392,6 +400,8 @@ Tìm kiếm trong môi trường phân nhánh, tìm kiếm các chuỗi hành đ
 
 ---
 ## 6. Thuật toán học tăng cường (Reinforcement Learning)
+
+[Xem đoạn mã BFS từ dòng 1125 đến 1190](23110297_NguyenThiQuyen_BaiTapCaNhan.py#L1125-L1190)
 
 Thuật toán học tăng cường là một phương pháp học máy trong đó một tác nhân học cách hành động tối ưu trong một môi trường thông qua việc nhận thưởng hoặc phạt sau mỗi hành động. Thay vì tìm kiếm giải pháp từ trước, tác nhân học qua kinh nghiệm và cải thiện hiệu suất qua thời gian. Điều này giúp giải quyết các bài toán phức tạp và động, nơi môi trường có thể thay đổi theo từng bước.
 
