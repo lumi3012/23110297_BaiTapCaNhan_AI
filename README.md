@@ -232,7 +232,7 @@ Thuật toán tìm kiếm cục bộ tìm kiếm trong không gian trạng thái
 ![sa](sa.gif.gif)
 ![ga](ga.gif.gif)
 
-![local_chart](Screenshot%202025-05-18%205749.png)
+![local_chart](Screenshot%202025-05-18%20205749.png))
 
 
 ### SHC (Simple Hill Climbing)
@@ -319,7 +319,7 @@ Thuật toán ràng buộc được sử dụng để giải quyết các bài t
 ![forward](forward.gif.gif)
 ![min_C](min_c.gif.gif)
 
-![csps_chart](Screenshot%202025-05-18%20205749.png)
+![csps_chart](Screenshot%202025-05-18%20210253.png))
 
 ### Backtracking
 
