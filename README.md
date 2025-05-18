@@ -167,7 +167,7 @@ Hoạt động tốt trên trạng thái trung bình đến khó.
 ![a_start](a_star.gif.gif)
 ![ida_star](ida_star.gif.gif)
 
-![informed_chart](Screenshot%202025-05-18%204124.png)
+![informed_chart](Screenshot%202025-05-18%20204124.png)
 
 
 ### Greedy
@@ -319,7 +319,7 @@ Thuật toán ràng buộc được sử dụng để giải quyết các bài t
 ![forward](forward.gif.gif)
 ![min_C](min_c.gif.gif)
 
-![csps_chart](Screenshot%202025-05-18%210253.png)
+![csps_chart](Screenshot%202025-05-18%20205749.png)
 
 ### Backtracking
 
@@ -422,7 +422,7 @@ Thuật toán học tăng cường là một phương pháp học máy trong đ�
 
 ![q_learning](q_learning.gif.gif)
 
-![rein_chart](Screenshot%202025-05-18%210536.png)
+![rein_chart](Screenshot%202025-05-18%20210536.png)
 
 ### Q-Learning
 
