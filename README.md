@@ -85,7 +85,7 @@ Thuật toán tìm kiếm không có thông tin là các thuật toán tìm ki�
 
   - Không tối ưu trong những bài toán phức tạp, vì chúng không sử dụng thông tin bổ sung để hướng dẫn tìm kiếm.
 
-**Mô phòng trong trò chơi 8-puzzle:**
+**Mô phỏng trong trò chơi 8-puzzle:**
 
 Hiệu quả với hầu hết trạng thái, kể cả trạng thái khó.
 
@@ -158,7 +158,7 @@ Thuật toán tìm kiếm có thông tin sử dụng thông tin bổ sung (như 
 
   -  Các thuật toán như A* hoặc Greedy có thể tốn thời gian và bộ nhớ khi không gian trạng thái rất lớn.
 
-**Mô phòng trong trò chơi 8-puzzle:**
+**Mô phỏng trong trò chơi 8-puzzle:**
 
 Hoạt động tốt trên trạng thái trung bình đến khó.
 
@@ -222,7 +222,7 @@ Thuật toán tìm kiếm cục bộ tìm kiếm trong không gian trạng thái
 
 -  Các thuật toán như SHC có thể bị kẹt ở một tối ưu cục bộ nếu không có chiến lược làm lạnh thích hợp (như Simulated Annealing).
 
-**Mô phòng trong trò chơi 8-puzzle:**
+**Mô phỏng trong trò chơi 8-puzzle:**
 
 -  ✅ Chọn trạng thái có độ dài lời giải khoảng 10 bước để tránh:
 
@@ -316,7 +316,7 @@ Thuật toán ràng buộc được sử dụng để giải quyết các bài t
 
 -  Tốn thời gian và tài nguyên khi số lượng ràng buộc và biến tăng lên.
 
-**Mô phòng trong trò chơi 8-puzzle:**
+**Mô phỏng trong trò chơi 8-puzzle:**
 
 -  Hữu ích khi kiểm soát biến số rõ ràng.
 
@@ -377,7 +377,7 @@ Thuật toán tìm kiếm trong môi trường phức tạp được áp dụng 
 
 -  Các thuật toán này có thể kém hiệu quả nếu môi trường không được mô tả rõ ràng hoặc thiếu dữ liệu.
 
-**Mô phòng trong trò chơi 8-puzzle:** Chủ yếu để minh họa ý tưởng, không thực tế trong 8-Puzzle cơ bản.
+**Mô phỏng trong trò chơi 8-puzzle:** Chủ yếu để minh họa ý tưởng, không thực tế trong 8-Puzzle cơ bản.
 
 -  ❗Chưa phát huy tối đa sức mạnh trong trò chơi này.
 
@@ -417,7 +417,7 @@ Thuật toán học tăng cường là một phương pháp học máy trong đ�
 
 -  Các thuật toán như Q-Learning có thể không hiệu quả trong không gian trạng thái lớn hoặc phức tạp mà không có chiến lược học thích hợp.
 
-**Mô phòng trong trò chơi 8-puzzle:**
+**Mô phỏng trong trò chơi 8-puzzle:**
 
 -  Đặt điều kiện thưởng, phạt để tạo động lực cho AI học tăng cường. Và ngày càng tìm ra các giải pháp tối ưu hơn.
 
